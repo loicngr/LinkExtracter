@@ -1,7 +1,7 @@
 # LinkExtracter
 Download file from link
 
-![exemple](https://i.imgur.com/d9yWKVC.gifv)
+Video exemple : https://i.imgur.com/d9yWKVC.gifv
 
 ### File url
 - > https://communaute.chorus-pro.gouv.fr/annuaire-cpro/
