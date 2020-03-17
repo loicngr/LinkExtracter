@@ -13,7 +13,7 @@ fn main() {
 
     // Get args
     let args: Vec<String>   = env::args().collect();
-    if args.len() >= 2 {
+    if args.len() == 3 {
 		match args[1].trim().parse::<String>() {
 			Ok(i) => { file_name = i; }
 			Err(error) => panic!(error)
@@ -22,8 +22,20 @@ fn main() {
 			Ok(i) => { dir_name = i; }
 			Err(error) => panic!(error)
 		}
-    } else {
-        panic!("Please, enter two parameters (filename and dirname).");
+    }
+    else if args.len() == 2 && args[1] == "--help" {
+        let message = r#"
+            Exemple : ./link-extracter.exe annuaire-cpro.xls ./myfolder
+            Parameters : 
+                1: filename
+                2: foldername
+        "#;
+        println!("{}", message);
+        std::process::exit(1);
+    }
+    else {
+        println!("Please, enter two parameters (filename and dirname). Get help with --help flag");
+        std::process::exit(1);
     }
 
     // Just remove / or \ character if available
